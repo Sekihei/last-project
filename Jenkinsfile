@@ -11,7 +11,7 @@ pipeline {
                 perfReport 'jmeter_report.jtl'
             }
         }
-    }
+
         post {
             success {
                 junit 'target/surefire-reports/**/*.xml'                       
