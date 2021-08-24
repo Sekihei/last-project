@@ -1,7 +1,7 @@
 pipeline {
     environment {
             PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Java\\jdk-16.0.1\\bin"
-    }
+            }
     agent {
             label 'Grupp1JMeter'
         }
@@ -16,7 +16,7 @@ pipeline {
     }
     post {
         success {
-            junit 'report.xml'                       
+            junit 'target/surefire-reports/**/*.xml'                      
         }
     }
     
