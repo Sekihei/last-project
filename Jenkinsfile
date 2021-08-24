@@ -11,11 +11,11 @@ pipeline {
                 perfReport 'jmeter_report.jtl'
             }
         }
-
-        post {
-            success {
-                junit 'target/surefire-reports/**/*.xml'                       
-            }
+    }
+    post {
+        success {
+            junit 'target/surefire-reports/**/*.xml'                       
         }
     }
+    
 }
