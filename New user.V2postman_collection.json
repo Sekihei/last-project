@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "cd45b9f1-aeee-4087-b531-64c8d9b2dc8e",
+		"name": "New user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New user  Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"User creation was successful\", function () {",
+							"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://104.209.254.152/login?back=my-account",
+					"protocol": "http",
+					"host": [
+						"104",
+						"209",
+						"254",
+						"152"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "back",
+							"value": "my-account"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
