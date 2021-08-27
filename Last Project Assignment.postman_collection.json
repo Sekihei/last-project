@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "54e278f9-b464-4f22-85ff-153e5f8fc688",
+		"name": "Last Project Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get addresses",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Thiya.12",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "EMLX2FKDSD1C7V6UDXVBMEWBCAK7U6WK",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/addresses/?&ws_key=Y16G7WIHVK8WQDC42F1LL77FX5HBU3MD&output_format=JSON",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"addresses",
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "Y16G7WIHVK8WQDC42F1LL77FX5HBU3MD"
+						},
+						{
+							"key": "output_format",
+							"value": "JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}orders/?&ws_key=58RITWB56ZMT4NYXFHY7EWD9HWIQV46Q",
+					"host": [
+						"{{url}}orders"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "58RITWB56ZMT4NYXFHY7EWD9HWIQV46Q"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}customers/?&ws_key=488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS",
+					"host": [
+						"{{url}}customers"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}orders?ws_key=58RITWB56ZMT4NYXFHY7EWD9HWIQV46Q",
+					"host": [
+						"{{url}}orders"
+					],
+					"query": [
+						{
+							"key": "ws_key",
+							"value": "58RITWB56ZMT4NYXFHY7EWD9HWIQV46Q"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user id 210",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}customers/210/?&ws_key=488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS&output_format=JSON",
+					"host": [
+						"{{url}}customers"
+					],
+					"path": [
+						"210",
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS"
+						},
+						{
+							"key": "output_format",
+							"value": "JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get request for Stocks and Stores",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Y6KI7BNQX5IF6YLAWQH8L2C6RMRS8L67?w",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Thiya.12",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}stocks/?&ws_key=Y6KI7BNQX5IF6YLAWQH8L2C6RMRS8L67",
+					"host": [
+						"{{url}}stocks"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "Y6KI7BNQX5IF6YLAWQH8L2C6RMRS8L67"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get carriers and carts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}carriers&carts/?&ws_key=N3GURVIGKHCY725K9YFEMESRXERVAJY6&output_format=JSON",
+					"host": [
+						"{{url}}carriers&carts"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "N3GURVIGKHCY725K9YFEMESRXERVAJY6"
+						},
+						{
+							"key": "output_format",
+							"value": "JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check if status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Check if body contains TCS\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"TATA\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<prestashop xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n  <customer>\r\n  <passwd><![CDATA[\"Marie12\"]]></passwd>\r\n  <lastname><![CDATA[Curie]]></lastname>\r\n    <firstname><![CDATA[Marie]]></firstname>\r\n    <email><![CDATA[marie.curie@gmail.com]]></email>\r\n    <company><![CDATA[TATA]]></company>\r\n    <id_gender><![CDATA[21]]></id_gender>\r\n   </customer>\r\n  </prestashop>  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}customers/?&ws_key=488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS&output_format=JSON",
+					"host": [
+						"{{url}}customers"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS"
+						},
+						{
+							"key": "output_format",
+							"value": "JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<prestashop xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n  <cart>\r\n  <id_currency><![CDATA[10]]></id_currency>\r\n    <id_customer><![CDATA[10]]></id_customer>\r\n    <id_shop><![CDATA[10]]></id_shop>\r\n    <id_lang><![CDATA[10]]></id_lang>\r\n    </cart>\r\n</prestashop>",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}carts/?&ws_key=N3GURVIGKHCY725K9YFEMESRXERVAJY6&output_format=JSON",
+					"host": [
+						"{{url}}carts"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "N3GURVIGKHCY725K9YFEMESRXERVAJY6"
+						},
+						{
+							"key": "output_format",
+							"value": "JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user id 225",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<prestashop xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n  <customer>\r\n  <id><![CDATA[209]]></id>\r\n  <passwd><![CDATA[\"Marie12\"]]></passwd>\r\n  <lastname><![CDATA[Curie]]></lastname>\r\n    <firstname><![CDATA[Marie]]></firstname>\r\n    <email><![CDATA[marie.curie@gmail.com]]></email>\r\n    <company><![CDATA[TCS]]></company>\r\n    <id_gender><![CDATA[21]]></id_gender>\r\n   </customer>\r\n  </prestashop>  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}customers/225/?&ws_key=488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS&output_format=JSON",
+					"host": [
+						"{{url}}customers"
+					],
+					"path": [
+						"225",
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS"
+						},
+						{
+							"key": "output_format",
+							"value": "JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
