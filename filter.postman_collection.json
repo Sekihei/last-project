@@ -1,0 +1,22 @@
+{
+	"info": {
+		"_postman_id": "6e14c3d6-3156-42b9-aae2-352da488d6a6",
+		"name": "filter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get",
+			"item": []
+		},
+		{
+			"name": "size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
