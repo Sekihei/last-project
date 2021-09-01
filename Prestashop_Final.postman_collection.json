@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "8ed51325-6763-4c95-b0e4-13de2d5a3a47",
+		"name": "Prestashop_Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "!! GET Men",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test name is men\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.category.name).to.eql(\"Men\") \r",
+							"});\r",
+							"\r",
+							"pm.test('Test number of products = ' + pm.response.json().category.associations.products.length, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.category.associations.products.length).to.equal\r",
+							"    (3);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/categories/4?ws_key=U5IMJ4DUI4QRTMCVAJT9D1UDPTJVGTHI{{json}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"categories",
+						"4"
+					],
+					"query": [
+						{
+							"key": "ws_key",
+							"value": "U5IMJ4DUI4QRTMCVAJT9D1UDPTJVGTHI{{json}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "!! GET Women",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test name is women\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.category.name).to.eql(\"Women\") \r",
+							"});\r",
+							"\r",
+							"pm.test('Test number of products = ' + pm.response.json().category.associations.products.length, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.category.associations.products.length).to.equal\r",
+							"    (1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/categories/5?ws_key=U5IMJ4DUI4QRTMCVAJT9D1UDPTJVGTHI{{json}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"categories",
+						"5"
+					],
+					"query": [
+						{
+							"key": "ws_key",
+							"value": "U5IMJ4DUI4QRTMCVAJT9D1UDPTJVGTHI{{json}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "!! GET Sizes",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test is passed\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Test name is Size\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.product_option.name).to.eql(\"Size\") ",
+							"});",
+							"",
+							"pm.test('Test there are = ' + pm.response.json().product_option.associations.product_option_values.length + ' sizes', function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.product_option.associations.product_option_values.length).to.equal(4);",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"followAuthorizationHeader": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "sort",
+						"value": "women",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Size",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/product_options/1?ws_key=U5IMJ4DUI4QRTMCVAJT9D1UDPTJVGTHI{{json}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product_options",
+						"1"
+					],
+					"query": [
+						{
+							"key": "ws_key",
+							"value": "U5IMJ4DUI4QRTMCVAJT9D1UDPTJVGTHI{{json}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Customer IDs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check if body contains expected string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});\r",
+							"\r",
+							"pm.variables.get(\"url\");\r",
+							"let var1=pm.variables.get(\"url\");\r",
+							"console.log(\"The url is\"+var1);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/customers/?&ws_key=488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS{{json}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customers",
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS{{json}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check if status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check if body contains TCS\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"TATA\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Check the status code name\", function () {\r",
+							"    pm.response.to.have.status(\"Created\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Checking the firstname\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.customer.firstname).to.eql(\"Marie\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<prestashop xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n  <customer>\r\n  <passwd><![CDATA[\"Marie12\"]]></passwd>\r\n  <lastname><![CDATA[Curie]]></lastname>\r\n    <firstname><![CDATA[Marie]]></firstname>\r\n    <email><![CDATA[marie.curie@gmail.com]]></email>\r\n    <company><![CDATA[TATA]]></company>\r\n    <id_gender><![CDATA[21]]></id_gender>\r\n   </customer>\r\n  </prestashop>  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/customers/?&ws_key=488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS{{json}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customers",
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS{{json}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update User ID 209",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check if status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check the status code name\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type header is application/json\", function() {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r",
+							"});\r",
+							"pm.test(\"Check if company is updated\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.customer.company).to.eql(\"TCS\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<prestashop xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n  <customer>\r\n  <id><![CDATA[209]]></id>\r\n  <passwd><![CDATA[\"Marie12\"]]></passwd>\r\n  <lastname><![CDATA[Curie]]></lastname>\r\n    <firstname><![CDATA[Marie]]></firstname>\r\n    <email><![CDATA[marie.curie@gmail.com]]></email>\r\n    <company><![CDATA[TCS]]></company>\r\n    <id_gender><![CDATA[21]]></id_gender>\r\n   </customer>\r\n  </prestashop>  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/customers/225/?&ws_key=488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS&output_format=JSON",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customers",
+						"225",
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "488MLB9QEFRXGLJNQBTYW4JDP2MIJJJS"
+						},
+						{
+							"key": "output_format",
+							"value": "JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create new cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check if status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check if body contains customer\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id_customer\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check the status code name\", function () {\r",
+							"    pm.response.to.have.status(\"Created\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Checking the customer id\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.cart.id_customer).to.eql(\"10\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<prestashop xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n  <cart>\r\n  <id_currency><![CDATA[10]]></id_currency>\r\n    <id_customer><![CDATA[10]]></id_customer>\r\n    <id_shop><![CDATA[10]]></id_shop>\r\n    <id_lang><![CDATA[10]]></id_lang>\r\n    </cart>\r\n</prestashop>",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/carts/?&ws_key=N3GURVIGKHCY725K9YFEMESRXERVAJY6{{json}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"carts",
+						""
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "ws_key",
+							"value": "N3GURVIGKHCY725K9YFEMESRXERVAJY6{{json}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Filter: Price",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test if body contains price\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"product_price\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test product_price is 79.000000\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.order_detail.product_price).to.eql(\"79.000000\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://104.209.254.152/api/order_details/3?ws_key=U5IMJ4DUI4QRTMCVAJT9D1UDPTJVGTHI&output_format=JSON",
+					"protocol": "http",
+					"host": [
+						"104",
+						"209",
+						"254",
+						"152"
+					],
+					"path": [
+						"api",
+						"order_details",
+						"3"
+					],
+					"query": [
+						{
+							"key": "ws_key",
+							"value": "U5IMJ4DUI4QRTMCVAJT9D1UDPTJVGTHI"
+						},
+						{
+							"key": "output_format",
+							"value": "JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Filter: Price (code: products)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test if body has price\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"price\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test that price is 12.900000\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.product.price).to.eql(\"12.900000\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://104.209.254.152/api/products/18?ws_key=U5IMJ4DUI4QRTMCVAJT9D1UDPTJVGTHI&output_format=JSON",
+					"protocol": "http",
+					"host": [
+						"104",
+						"209",
+						"254",
+						"152"
+					],
+					"path": [
+						"api",
+						"products",
+						"18"
+					],
+					"query": [
+						{
+							"key": "ws_key",
+							"value": "U5IMJ4DUI4QRTMCVAJT9D1UDPTJVGTHI"
+						},
+						{
+							"key": "output_format",
+							"value": "JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://104.209.254.152/api"
+		},
+		{
+			"key": "json",
+			"value": "&output_format=JSON"
+		}
+	]
+}
