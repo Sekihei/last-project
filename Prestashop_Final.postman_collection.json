@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "!! GET Men",
+			"name": "GET Men",
 			"event": [
 				{
 					"listen": "test",
@@ -54,7 +54,7 @@
 			"response": []
 		},
 		{
-			"name": "!! GET Women",
+			"name": "GET Women",
 			"event": [
 				{
 					"listen": "test",
@@ -102,7 +102,7 @@
 			"response": []
 		},
 		{
-			"name": "!! GET Sizes",
+			"name": "GET Sizes",
 			"event": [
 				{
 					"listen": "prerequest",
